@@ -103,23 +103,26 @@
       // Jangan ubah cara deklarasi fungsinya, cukup isi saja
       // TODO: register event onclick / addEventListener untuk button
       // akan menjalankan fungsi fnClickHandler
-      function fnClickHandler() {
-        let li = document.createElement("li");
-        li.innerText = input.value;
-        output.appendChild(li);
+      function fnClickHandler(toDoItem) {
+        // let li = document.createElement("li");
+        // li.innerText = input.value;
+        // output.appendChild(li);
+        // input.value = "";
+        output.innerHTML += `<li>${toDoItem}</li>`;
         input.value = "";
+        input.focus();
       }
       // TODO: register event onkeypress / addEventListener untuk input
 
       button.addEventListener("click", (e) => {
-        return fnClickHandler();
+        return fnClickHandler(input.value);
       });
 
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
 
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-          return fnClickHandler();
+          return fnClickHandler(input.value);
         }
       });
     </script>
