@@ -79,9 +79,7 @@
           placeholder="tulis disini..."
         />
         <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-        <button type="submit" id="todo-submit" onclick="fnClickHandler()">
-          Submit
-        </button>
+        <button type="submit" id="todo-submit">Submit</button>
       </div>
 
       <!-- Section output -->
@@ -112,6 +110,11 @@
         input.value = "";
       }
       // TODO: register event onkeypress / addEventListener untuk input
+
+      button.addEventListener("click", (e) => {
+        return fnClickHandler();
+      });
+
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
 
       input.addEventListener("keydown", (e) => {
