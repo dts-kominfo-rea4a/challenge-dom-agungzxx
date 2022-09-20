@@ -119,12 +119,15 @@
       });
 
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-
-      input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          return fnClickHandler(input.value);
-        }
+      input.addEventListener("keypress", ({ charCode }) => {
+        return charCode === 13 && fnClickHandler(input.value);
       });
+
+      // input.addEventListener("keydown", (e) => {
+      //   if (e.key === "Enter") {
+      //     return fnClickHandler(input.value);
+      //   }
+      // });
     </script>
   </body>
 </html>
